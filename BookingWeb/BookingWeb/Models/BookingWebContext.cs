@@ -17,6 +17,8 @@ namespace BookingWeb.Models
     
         public BookingWebContext() : base("name=BookingWebContext")
         {
+            // New code:
+            this.Database.Log = s => System.Diagnostics.Debug.WriteLine(s);
         }
 
         public System.Data.Entity.DbSet<BookingWeb.Models.Author> Authors { get; set; }
